@@ -1,0 +1,65 @@
+{
+	"name": "browser-compat",
+	"displayName": "Browser Compatible",
+	"description": "Browser Compatibility with CanIUse data",
+	"version": "0.0.1",
+	"license": "MIT",
+	"engines": {
+		"vscode": "^1.41.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onLanguage:javascript",
+		"onLanguage:javascriptreact",
+		"onLanguage:typescript",
+		"onLanguage:typescriptreact",
+		"onLanguage:vue",
+		"onLanguage:svelte",
+		"onLanguage:css",
+		"onLanguage:sass",
+		"onLanguage:less",
+		"onLanguage:stylus",
+		"onLanguage:html",
+		"onLanguage:pug",
+		"onLanguage:haml",
+		"onLanguage:slim",
+		"onCommand:extension.browserCompatible"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.browserCompatible",
+				"title": "Browser Compatible?"
+			}
+		]
+	},
+	"scripts": {
+		"download:caniuse": "ts-node src/download.ts",
+		"update:bcd": "node src/update_mdn_bcd.js",
+		"vscode:prepublish": "yarn run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "yarn run compile",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.1.1",
+		"@types/lodash": "^4.14.149",
+		"@types/mocha": "^5.2.7",
+		"@types/node": "^12.11.7",
+		"@types/vscode": "^1.41.0",
+		"glob": "^7.1.5",
+		"mocha": "^6.2.2",
+		"ts-node": "^8.6.2",
+		"tslint": "^5.20.0",
+		"typescript": "^3.6.4",
+		"vscode-test": "^1.2.2"
+	},
+	"dependencies": {
+		"lodash": "^4.17.15",
+		"mdn-browser-compat-data": "^1.0.6"
+	}
+}
