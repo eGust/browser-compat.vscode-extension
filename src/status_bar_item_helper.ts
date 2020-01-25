@@ -9,7 +9,7 @@ import { useCaniuse, CaniuseHelpers, Searcher } from './caniuse_data';
 
 export const COMMAND = 'extension.browserCompatible';
 
-const RE_WORD = /\b[\w-]+\b/;
+const RE_WORD = /\b@?[\w:-]+\b/;
 
 export class ItemManager {
   private currentText: string = '';

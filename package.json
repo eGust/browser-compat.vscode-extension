@@ -37,8 +37,8 @@
 		]
 	},
 	"scripts": {
-		"download:caniuse": "ts-node src/download.ts",
-		"update:bcd": "node src/update_mdn_bcd.js",
+		"download:caniuse": "ts-node tasks/download.ts",
+		"update:bcd": "node tasks/update_mdn_bcd.js",
 		"vscode:prepublish": "yarn run compile",
 		"compile": "tsc -p ./",
 		"watch": "tsc -watch -p ./",

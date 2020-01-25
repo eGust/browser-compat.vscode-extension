@@ -1,4 +1,4 @@
-import { fetchCaniuseData } from './caniuse_data';
+import { fetchCaniuseData } from '../src/caniuse_data';
 
 (async () => {
   try {
