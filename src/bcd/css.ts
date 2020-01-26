@@ -50,6 +50,18 @@ export const search = (text: string): string[] => {
   const exact = ensureSearchDict().has(txt);
   if (exact) { return [txt]; }
 
+  if (text.startsWith('@')) {
+    const key = `@${txt}`;
+    if (searchDict.has(key)) { return [key]; }
+  }
+
+  if (text.startsWith(':')) {
+    let key = `:${txt}`;
+    if (searchDict.has(key)) { return [key]; }
+    key = `::${txt}`;
+    if (searchDict.has(key)) { return [key]; }
+  }
+
   const keys: string[] = [];
   for (const key of searchDict.keys()) {
     if (key.includes(txt)) {

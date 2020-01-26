@@ -3,12 +3,13 @@
 import { ExtensionContext } from 'vscode';
 
 import { setup } from './status_bar_item_helper_css';
+import { register } from './hover_css';
 
 // this method is called when your extension is activated
 // your extension is activated the very first time the command is executed
 export function activate(context: ExtensionContext) {
-	console.log('activate extension...');
 	setup(context);
+	register();
 }
 
 // this method is called when your extension is deactivated
